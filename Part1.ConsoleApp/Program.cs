@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Part1.ConsoleApp.Application.Services;
+using Part1.ConsoleApp.Domain.Entities;
 using Part1.ConsoleApp.Infrastructure.Persistence;
+using Part1.ConsoleApp.Repositories;
 using Spectre.Console;
 using System;
 
@@ -15,7 +18,10 @@ namespace Part1.ConsoleApp
 
             if (TestDatabaseConnection(dbContext))
             {
-                MostrarMenu();
+                var productoRepository = new ProductoRepository(dbContext);
+                var productoService = new ProductoService(productoRepository);
+                
+                MostrarMenu(productoService);
             }
         }
 
@@ -51,7 +57,7 @@ namespace Part1.ConsoleApp
             }
         }
 
-        static void MostrarMenu()
+        static void MostrarMenu(ProductoService productoService)
         {
             while (true)
             {
@@ -64,16 +70,16 @@ namespace Part1.ConsoleApp
                 switch (opcion)
                 {
                     case MenuOpciones.AgregarFilamento:
-                        Console.WriteLine("Agregar filamento.");
+                        AgregarFilamento(productoService);
                         break;
                     case MenuOpciones.BorrarFilamento:
-                        Console.WriteLine("Borrar filamento.");
+                        Console.WriteLine("BorrarFilamento");
                         break;
                     case MenuOpciones.ActualizarFilamento:
-                        Console.WriteLine("Actualizar filamento.");
+                        Console.WriteLine("ActualizarFilamento");
                         break;
                     case MenuOpciones.VerFilamento:
-                        Console.WriteLine("Ver filamento.");
+                        Console.WriteLine("VerFilamento");
                         break;
                     case MenuOpciones.Salir:
                         Console.WriteLine("Saliendo...");
@@ -81,7 +87,6 @@ namespace Part1.ConsoleApp
                 }
             }
         }
-
         enum MenuOpciones
         {
             AgregarFilamento,
@@ -89,6 +94,55 @@ namespace Part1.ConsoleApp
             ActualizarFilamento,
             VerFilamento,
             Salir
+        }
+
+        static void AgregarFilamento(ProductoService service)
+        {
+            Console.Write("Nombre: ");
+            var nombre = Console.ReadLine();
+
+            Console.Write("Precio: ");
+            var precio = decimal.Parse(Console.ReadLine());
+
+            Console.Write("Peso: ");
+            var peso = float.Parse(Console.ReadLine());
+
+            Console.Write("Stock: ");
+            var stock = int.Parse(Console.ReadLine());
+
+            Console.Write("Color: ");
+            var color = Console.ReadLine();
+
+            Console.Write("ID Tipo Material: ");
+            var tipoMaterialId = int.Parse(Console.ReadLine());
+
+            Console.Write("ID Marca: ");
+            var marcaId = int.Parse(Console.ReadLine());
+
+            Console.Write("ID Distribuidor: ");
+            var distribuidorId = int.Parse(Console.ReadLine());
+
+            //var filamento = "";
+           // service.AgregarProductoAsync(filamento);
+
+            Console.WriteLine("Filamento agregado correctamente.");
+        }
+
+
+
+        static void BorrarFilamento(ProductoService service)
+        {
+
+        }
+
+        static void ActualizarFilamento(ProductoService service)
+        {
+
+        }
+
+        static void VerFilamentos(ProductoService service)
+        {
+
         }
     }
 }
