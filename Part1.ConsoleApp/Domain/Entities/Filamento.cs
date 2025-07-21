@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part1.ConsoleApp
+namespace Part1.ConsoleApp.Domain.Entities
 {
     internal class Filamento : Producto 
     {

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part1.ConsoleApp
+namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class Distribuidor
+    internal class Marca
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -16,11 +16,11 @@ namespace Part1.ConsoleApp
         
         [Required]
         public required string Nombre { get; set; }
-        public long Telefono { get; set; }
-        public required string Direccion {  get; set; }
-        public List<Marca> Marcas { get; set; } = new();
-        public List<Filamento> Filamentos { get; set; } = new();
-        public List<Insumo> Insumos { get; set; } = new();
+        
+        [ForeignKey("Distribuidor")]        
+        public int DistribuidorId { get; set; }
+        public required Distribuidor Distribuidor { get; set; }
 
+        public List<Filamento> Filamentos { get; set; } = new();
     }
 }

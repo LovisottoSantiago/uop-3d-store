@@ -6,21 +6,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part1.ConsoleApp
+namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class Marca
+    public abstract class Producto
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
+
         [Required]
         public required string Nombre { get; set; }
-        
-        [ForeignKey("Distribuidor")]        
-        public int DistribuidorId { get; set; }
-        public required Distribuidor Distribuidor { get; set; }
 
-        public List<Filamento> Filamentos { get; set; } = new();
+        [Required]
+        public required decimal Precio { get; set; }
+
+        [Required]
+        public required float Peso { get; set; }
+
+        [Required]
+        public required int Stock { get; set; }
     }
+
 }
