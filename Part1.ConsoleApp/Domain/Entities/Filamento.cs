@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class Filamento : Producto
+    public class Filamento : Producto
     {
         public required string Color { get; set; }
 

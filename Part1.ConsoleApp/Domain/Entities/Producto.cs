@@ -25,6 +25,8 @@ namespace Part1.ConsoleApp.Domain.Entities
 
         [Required]
         public required int Stock { get; set; }
+        [Required]
+        public required bool Estado { get; set; }
     }
 
 }

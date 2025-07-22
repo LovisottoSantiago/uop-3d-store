@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class Marca
+    public class Marca
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

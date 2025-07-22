@@ -7,7 +7,7 @@ using Part1.ConsoleApp.Infrastructure.Persistence;
 
 #nullable disable
 
-namespace Part1.ConsoleApp.Migrations
+namespace Part1.ConsoleApp.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace Part1.ConsoleApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Distribuidor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace Part1.ConsoleApp.Migrations
                     b.ToTable("Distribuidor", (string)null);
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Marca", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Marca", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace Part1.ConsoleApp.Migrations
                     b.ToTable("Marca", (string)null);
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Producto", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Producto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -102,7 +102,7 @@ namespace Part1.ConsoleApp.Migrations
                     b.UseTphMappingStrategy();
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.TipoMaterial", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.TipoMaterial", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -119,9 +119,9 @@ namespace Part1.ConsoleApp.Migrations
                     b.ToTable("TipoMaterial", (string)null);
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Filamento", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Filamento", b =>
                 {
-                    b.HasBaseType("Part1.ConsoleApp.Infrastructure.Persistence.Producto");
+                    b.HasBaseType("Part1.ConsoleApp.Domain.Entities.Producto");
 
                     b.Property<string>("Color")
                         .IsRequired()
@@ -159,9 +159,9 @@ namespace Part1.ConsoleApp.Migrations
                     b.HasDiscriminator().HasValue("Filamento");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Insumo", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Insumo", b =>
                 {
-                    b.HasBaseType("Part1.ConsoleApp.Infrastructure.Persistence.Producto");
+                    b.HasBaseType("Part1.ConsoleApp.Domain.Entities.Producto");
 
                     b.Property<int>("DistribuidorId")
                         .HasColumnType("int");
@@ -176,9 +176,9 @@ namespace Part1.ConsoleApp.Migrations
                     b.HasDiscriminator().HasValue("Insumo");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Marca", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Marca", b =>
                 {
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", "Distribuidor")
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Distribuidor", "Distribuidor")
                         .WithMany("Marcas")
                         .HasForeignKey("DistribuidorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -187,25 +187,25 @@ namespace Part1.ConsoleApp.Migrations
                     b.Navigation("Distribuidor");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Filamento", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Filamento", b =>
                 {
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", "Distribuidor")
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Distribuidor", "Distribuidor")
                         .WithMany()
                         .HasForeignKey("DistribuidorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", null)
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Distribuidor", null)
                         .WithMany("Filamentos")
                         .HasForeignKey("DistribuidorId1");
 
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Marca", "Marca")
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Marca", "Marca")
                         .WithMany("Filamentos")
                         .HasForeignKey("MarcaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.TipoMaterial", "TipoMaterial")
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.TipoMaterial", "TipoMaterial")
                         .WithMany()
                         .HasForeignKey("TipoMaterialId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -218,22 +218,22 @@ namespace Part1.ConsoleApp.Migrations
                     b.Navigation("TipoMaterial");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Insumo", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Insumo", b =>
                 {
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", "Distribuidor")
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Distribuidor", "Distribuidor")
                         .WithMany()
                         .HasForeignKey("DistribuidorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", null)
+                    b.HasOne("Part1.ConsoleApp.Domain.Entities.Distribuidor", null)
                         .WithMany("Insumos")
                         .HasForeignKey("DistribuidorId1");
 
                     b.Navigation("Distribuidor");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Distribuidor", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Distribuidor", b =>
                 {
                     b.Navigation("Filamentos");
 
@@ -242,7 +242,7 @@ namespace Part1.ConsoleApp.Migrations
                     b.Navigation("Marcas");
                 });
 
-            modelBuilder.Entity("Part1.ConsoleApp.Infrastructure.Persistence.Marca", b =>
+            modelBuilder.Entity("Part1.ConsoleApp.Domain.Entities.Marca", b =>
                 {
                     b.Navigation("Filamentos");
                 });

@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\createfilamentocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\createfilamentocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\domain\\entities\\filamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\domain\\entities\\filamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\domain\\entities\\distribuidor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\domain\\entities\\distribuidor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Infrastructure\\Persistence\\AppDbContext.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T17:09:44.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Filamento.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Domain\\Entities\\Filamento.cs",
               "RelativeDocumentMoniker": "Part1.ConsoleApp\\Domain\\Entities\\Filamento.cs",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Domain\\Entities\\Filamento.cs",
               "RelativeToolTip": "Part1.ConsoleApp\\Domain\\Entities\\Filamento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T19:50:07.093Z",
+              "WhenOpened": "2025-07-22T17:09:38.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Distribuidor.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Domain\\Entities\\Distribuidor.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Domain\\Entities\\Distribuidor.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Domain\\Entities\\Distribuidor.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Domain\\Entities\\Distribuidor.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T17:09:33.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateFilamentoCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\CreateFilamentoCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\CreateFilamentoCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\CreateFilamentoCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\CreateFilamentoCommand.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Program.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Program.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwGkAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T19:43:44.726Z",
+              "WhenOpened": "2025-07-22T17:06:17.084Z",
               "EditorCaption": ""
             }
           ]

@@ -54,6 +54,14 @@
               "target": "Package",
               "version": "[6.5.1, )"
             },
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.7, )"
@@ -73,6 +81,14 @@
               "version": "[9.0.7, )"
             },
             "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.7, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[9.0.7, )"
             },

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class Insumo : Producto
+    public class Insumo : Producto
     {
         [ForeignKey("Distribuidor")]
         public int DistribuidorId { get; set; }

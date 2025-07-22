@@ -1,18 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Part1.ConsoleApp.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Infrastructure.Persistence
 {
-    internal class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Filamento> Filamentos { get; set; }
         public DbSet<Insumo> Insumos { get; set; }
@@ -20,37 +13,54 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
         public DbSet<Distribuidor> Distribuidores { get; set; }
         public DbSet<TipoMaterial> TipoMateriales { get; set; }
 
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                var config = new ConfigurationBuilder()
+                    .SetBasePath(AppContext.BaseDirectory)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .Build();
+
+                var connectionString = config.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Producto es una clase abstracta.
+            modelBuilder.Entity<Producto>()
+                .Property(p => p.Precio)
+                .HasPrecision(18, 2);
+
             modelBuilder.Entity<Producto>()
                 .HasDiscriminator<string>("TipoProducto")
                 .HasValue<Filamento>("Filamento")
                 .HasValue<Insumo>("Insumo");
-           
 
-            // Nomenclatura de las entidades, quitar el plural para respetar nombres.
             modelBuilder.Entity<Producto>().ToTable("Producto");
             modelBuilder.Entity<Marca>().ToTable("Marca");
             modelBuilder.Entity<Distribuidor>().ToTable("Distribuidor");
             modelBuilder.Entity<TipoMaterial>().ToTable("TipoMaterial");
 
-            // Relaciones conflictivas: Distribuidor en ambas subclases
             modelBuilder.Entity<Filamento>()
                 .HasOne(f => f.Distribuidor)
-                .WithMany()
+                .WithMany(d => d.Filamentos)
                 .HasForeignKey(f => f.DistribuidorId)
-                .OnDelete(DeleteBehavior.Restrict); // desactiva cascade
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Insumo>()
                 .HasOne(i => i.Distribuidor)
-                .WithMany()
+                .WithMany(d => d.Insumos)
                 .HasForeignKey(i => i.DistribuidorId)
-                .OnDelete(DeleteBehavior.Restrict); // desactiva cascade
-
+                .OnDelete(DeleteBehavior.Restrict);
         }
-
     }
 }

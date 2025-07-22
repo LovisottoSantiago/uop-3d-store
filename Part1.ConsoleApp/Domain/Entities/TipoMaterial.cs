@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Domain.Entities
 {
-    internal class TipoMaterial
+    public class TipoMaterial
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

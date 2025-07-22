@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Part1.ConsoleApp.Migrations
+namespace Part1.ConsoleApp.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

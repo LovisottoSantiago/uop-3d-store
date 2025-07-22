@@ -1,43 +1,52 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Part1.ConsoleApp.Application.Services;
+using Microsoft.Extensions.DependencyInjection;
+using MediatR;
+using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create;
 using Part1.ConsoleApp.Domain.Entities;
 using Part1.ConsoleApp.Infrastructure.Persistence;
-using Part1.ConsoleApp.Repositories;
 using Spectre.Console;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace Part1.ConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var config = BuildConfiguration();
-            var dbContext = CreateDbContext(config);
+            var services = new ServiceCollection();
+
+            services.AddLogging(builder =>
+            {
+                builder.AddConsole();
+            });
+
+            // Configurar DbContext
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                var config = new ConfigurationBuilder()
+                    .SetBasePath(AppContext.BaseDirectory)
+                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .Build();
+
+                var connectionString = config.GetConnectionString("DefaultConnection");
+                options.UseSqlServer(connectionString);
+            });
+
+            // Registrar MediatR 
+            services.AddMediatR(typeof(CreateFilamentoCommandHandler).Assembly);
+
+            var provider = services.BuildServiceProvider();
+            var dbContext = provider.GetRequiredService<AppDbContext>();
+            var mediator = provider.GetRequiredService<IMediator>();
 
             if (TestDatabaseConnection(dbContext))
             {
-                var productoRepository = new ProductoRepository(dbContext);
-                var productoService = new ProductoService(productoRepository);
-                
-                MostrarMenu(productoService);
+                await MostrarMenu(mediator, dbContext);
             }
-        }
-
-        static IConfiguration BuildConfiguration()
-        {
-            return new ConfigurationBuilder()
-                .SetBasePath(AppContext.BaseDirectory)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
-        }
-
-        static AppDbContext CreateDbContext(IConfiguration config)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            return new AppDbContext(optionsBuilder.Options);
         }
 
         static bool TestDatabaseConnection(AppDbContext context)
@@ -57,7 +66,7 @@ namespace Part1.ConsoleApp
             }
         }
 
-        static void MostrarMenu(ProductoService productoService)
+        static async Task MostrarMenu(IMediator mediator, AppDbContext dbContext)
         {
             while (true)
             {
@@ -70,7 +79,7 @@ namespace Part1.ConsoleApp
                 switch (opcion)
                 {
                     case MenuOpciones.AgregarFilamento:
-                        AgregarFilamento(productoService);
+                        await AgregarFilamento(mediator, dbContext);
                         break;
                     case MenuOpciones.BorrarFilamento:
                         Console.WriteLine("BorrarFilamento");
@@ -87,6 +96,66 @@ namespace Part1.ConsoleApp
                 }
             }
         }
+
+        static async Task AgregarFilamento(IMediator mediator, AppDbContext dbContext)
+        {
+            Console.WriteLine("\n[green]Agregar Filamento:");
+            var nombre = AnsiConsole.Ask<string>("Nombre:");
+            var precio = AnsiConsole.Ask<decimal>("Precio:");
+            var peso = AnsiConsole.Ask<float>("Peso:");
+            var stock = AnsiConsole.Ask<int>("Stock:");
+            var estado = AnsiConsole.Confirm("¿Está activo?", true);
+            var color = AnsiConsole.Ask<string>("Color:");
+
+            var tipos = dbContext.TipoMateriales.ToList();
+            var tipoMaterial = AnsiConsole.Prompt(
+                new SelectionPrompt<TipoMaterial>()
+                    .Title("Seleccione el tipo de material:")
+                    .AddChoices(tipos)
+                    .UseConverter(t => $"{t.Id} - {t.Nombre}")
+            );
+
+            var marcas = dbContext.Marcas.ToList();
+            var marca = AnsiConsole.Prompt(
+                new SelectionPrompt<Marca>()
+                    .Title("Seleccione la marca:")
+                    .AddChoices(marcas)
+                    .UseConverter(m => $"{m.Id} - {m.Nombre}")
+            );
+
+            var distribuidores = dbContext.Distribuidores.ToList();
+            var distribuidor = AnsiConsole.Prompt(
+                new SelectionPrompt<Distribuidor>()
+                    .Title("Seleccione el distribuidor:")
+                    .AddChoices(distribuidores)
+                    .UseConverter(d => $"{d.Id} - {d.Nombre}")
+            );
+
+            var command = new CreateFilamentoCommand
+            {
+                Nombre = nombre,
+                Precio = precio,
+                Peso = peso,
+                Stock = stock,
+                Estado = estado,
+                Color = color,
+                TipoMaterialId = tipoMaterial.Id,
+                MarcaId = marca.Id,
+                DistribuidorId = distribuidor.Id
+            };
+
+            var resultado = await mediator.Send(command);
+
+            if (resultado != null)
+            {
+                AnsiConsole.MarkupLine($"[green]Filamento creado con éxito! ID: {resultado.Id}[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("[red]Error al crear el filamento.[/]");
+            }
+        }
+
         enum MenuOpciones
         {
             AgregarFilamento,
@@ -94,55 +163,6 @@ namespace Part1.ConsoleApp
             ActualizarFilamento,
             VerFilamento,
             Salir
-        }
-
-        static void AgregarFilamento(ProductoService service)
-        {
-            Console.Write("Nombre: ");
-            var nombre = Console.ReadLine();
-
-            Console.Write("Precio: ");
-            var precio = decimal.Parse(Console.ReadLine());
-
-            Console.Write("Peso: ");
-            var peso = float.Parse(Console.ReadLine());
-
-            Console.Write("Stock: ");
-            var stock = int.Parse(Console.ReadLine());
-
-            Console.Write("Color: ");
-            var color = Console.ReadLine();
-
-            Console.Write("ID Tipo Material: ");
-            var tipoMaterialId = int.Parse(Console.ReadLine());
-
-            Console.Write("ID Marca: ");
-            var marcaId = int.Parse(Console.ReadLine());
-
-            Console.Write("ID Distribuidor: ");
-            var distribuidorId = int.Parse(Console.ReadLine());
-
-            //var filamento = "";
-           // service.AgregarProductoAsync(filamento);
-
-            Console.WriteLine("Filamento agregado correctamente.");
-        }
-
-
-
-        static void BorrarFilamento(ProductoService service)
-        {
-
-        }
-
-        static void ActualizarFilamento(ProductoService service)
-        {
-
-        }
-
-        static void VerFilamentos(ProductoService service)
-        {
-
         }
     }
 }
