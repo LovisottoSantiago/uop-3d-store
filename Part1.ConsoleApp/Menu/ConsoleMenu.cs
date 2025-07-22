@@ -1,0 +1,47 @@
+using MediatR;
+using Part1.ConsoleApp.Infrastructure.Persistence;
+using Spectre.Console;
+using System;
+using System.Threading.Tasks;
+
+namespace Part1.ConsoleApp.Menu
+{
+    public static class ConsoleMenu
+    {
+        public static async Task MostrarMenu(IMediator mediator, AppDbContext dbContext)
+        {
+            while (true)
+            {
+                var opcion = AnsiConsole.Prompt(
+                    new SelectionPrompt<MenuOpciones>()
+                        .Title("\n[green]Menu de opciones:[/]")
+                        .AddChoices(Enum.GetValues<MenuOpciones>())
+                );
+
+                switch (opcion)
+                {
+                    case MenuOpciones.Filamentos:
+                        await FilamentoMenu.MostrarSubMenu(mediator, dbContext);
+                        break;
+                    case MenuOpciones.Insumos:
+                        await InsumoMenu.MostrarSubMenu(mediator, dbContext);
+                        break;
+                    case MenuOpciones.Marcas:
+                        await MarcaMenu.MostrarSubMenu(mediator, dbContext);
+                        break;
+                    case MenuOpciones.Salir:
+                        Console.WriteLine("Saliendo...");
+                        return;
+                }
+            }
+        }
+
+        enum MenuOpciones
+        {
+            Filamentos,
+            Insumos,
+            Marcas,
+            Salir
+        }
+    }
+} 
