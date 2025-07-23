@@ -19,8 +19,7 @@ namespace Part1.ConsoleApp.Domain.Entities
         public long Telefono { get; set; }
         public required string Direccion {  get; set; }
         public List<Marca> Marcas { get; set; } = new();
-        public List<Filamento> Filamentos { get; set; } = new List<Filamento>();
-        public List<Insumo> Insumos { get; set; } = new List<Insumo>();
+        public List<Producto> Productos { get; set; } = new List<Producto>();
 
     }
 }

@@ -10,8 +10,6 @@ namespace Part1.ConsoleApp.Domain.Entities
 {
     public class Insumo : Producto
     {
-        [ForeignKey("Distribuidor")]
-        public int DistribuidorId { get; set; }
-        public required Distribuidor Distribuidor { get; set; }
+
     }
 }

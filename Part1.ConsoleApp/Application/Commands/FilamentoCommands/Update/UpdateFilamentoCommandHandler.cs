@@ -32,13 +32,13 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update
 
             filamento.Nombre = request.Nombre;
             filamento.Precio = (decimal)request.Precio;
-            filamento.Peso = (float)request.Peso;
             filamento.Stock = (int)request.Stock;
             filamento.Estado = request.Estado;
             filamento.Color = request.Color;
-            filamento.TipoMaterialId = request.TipoMaterialId;
             filamento.MarcaId = request.MarcaId;
             filamento.DistribuidorId = request.DistribuidorId;
+            filamento.TipoMaterialId = request.TipoMaterialId;
+            filamento.Peso = (float)request.Peso;
 
             await _context.SaveChangesAsync();
             return filamento;

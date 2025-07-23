@@ -18,19 +18,19 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
             _context = context;
         }
 
-        public async Task<Filamento> Handle(CreateFilamentoCommand command, CancellationToken cancellationToken)
+        public async Task<Filamento> Handle(CreateFilamentoCommand request, CancellationToken cancellationToken)
         {
             var filamento = new Filamento
             {
-                Nombre = command.Nombre,
-                Precio = (decimal)command.Precio,
-                Peso = (float)command.Peso,
-                Stock = (int)command.Stock,
-                Estado = command.Estado,
-                Color = command.Color,
-                TipoMaterialId = command.TipoMaterialId,
-                MarcaId = command.MarcaId,
-                DistribuidorId = command.DistribuidorId
+                Nombre = request.Nombre,
+                Precio = (decimal)request.Precio,
+                Stock = (int)request.Stock,
+                Estado = request.Estado,
+                Color = request.Color,
+                MarcaId = request.MarcaId,
+                DistribuidorId = request.DistribuidorId,
+                TipoMaterialId = request.TipoMaterialId,
+                Peso = (float)request.Peso
             };
 
             _context.Filamentos.Add(filamento);

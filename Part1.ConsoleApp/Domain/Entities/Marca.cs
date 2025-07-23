@@ -19,8 +19,8 @@ namespace Part1.ConsoleApp.Domain.Entities
         
         [ForeignKey("Distribuidor")]        
         public int DistribuidorId { get; set; }
-        public required Distribuidor Distribuidor { get; set; }
+        public Distribuidor Distribuidor { get; set; }
 
-        public List<Filamento> Filamentos { get; set; } = new();
+        public List<Producto> Productos { get; set; } = new();
     }
 }

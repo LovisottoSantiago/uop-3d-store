@@ -29,6 +29,12 @@ namespace Part1.ConsoleApp.Menu
                     case MenuOpciones.Marcas:
                         await MarcaMenu.MostrarSubMenu(mediator, dbContext);
                         break;
+                    case MenuOpciones.Distribuidores:
+                        await DistribuidorMenu.MostrarSubMenu(mediator, dbContext);
+                        break;
+                    case MenuOpciones.TipoMateriales:
+                        await TipoMaterialMenu.MostrarSubMenu(mediator, dbContext);
+                        break;
                     case MenuOpciones.Salir:
                         Console.WriteLine("Saliendo...");
                         return;
@@ -41,6 +47,8 @@ namespace Part1.ConsoleApp.Menu
             Filamentos,
             Insumos,
             Marcas,
+            Distribuidores,
+            TipoMateriales,
             Salir
         }
     }

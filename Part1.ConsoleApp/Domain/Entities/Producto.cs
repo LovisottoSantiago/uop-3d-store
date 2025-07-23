@@ -21,12 +21,20 @@ namespace Part1.ConsoleApp.Domain.Entities
         public required decimal Precio { get; set; }
 
         [Required]
-        public required float Peso { get; set; }
-
-        [Required]
         public required int Stock { get; set; }
         [Required]
         public required bool Estado { get; set; }
+        
+        [Required]
+        public required string Color { get; set; }
+        
+        [ForeignKey("Marca")]
+        public int MarcaId { get; set; }
+        public Marca Marca { get; set; }
+
+        [ForeignKey("Distribuidor")]
+        public int DistribuidorId { get; set; }
+        public Distribuidor Distribuidor { get; set; }
     }
 
 }

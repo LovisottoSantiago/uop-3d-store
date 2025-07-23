@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\filamentomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\filamentomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\marcamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\marcamenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\insumomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\insumomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\consolemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\consolemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,77 +21,51 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "DockedWidth": 233,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MarcaMenu.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\MarcaMenu.cs",
               "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\MarcaMenu.cs",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\MarcaMenu.cs",
               "RelativeToolTip": "Part1.ConsoleApp\\Menu\\MarcaMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwBkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T19:39:25.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InsumoMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T19:39:23.149Z",
+              "WhenOpened": "2025-07-23T01:34:22.426Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FilamentoMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwE8AAAAzAAAAAAAAAA==",
+              "Title": "CreateMarcaCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T19:39:20.251Z",
+              "WhenOpened": "2025-07-23T01:33:22.751Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ConsoleMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "CreateMarcaCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T19:39:09.923Z",
+              "WhenOpened": "2025-07-23T01:33:11.573Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Program.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Program.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T19:38:00.762Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
