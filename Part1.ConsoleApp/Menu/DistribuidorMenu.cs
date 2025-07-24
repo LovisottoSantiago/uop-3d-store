@@ -5,6 +5,7 @@ using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Part1.ConsoleApp.Menu
 {
@@ -63,6 +64,7 @@ namespace Part1.ConsoleApp.Menu
         private static async Task ListarDistribuidores(IMediator mediator)
         {
             var distribuidores = await mediator.Send(new Application.Queries.DistribuidorQueries.Get.GetAllDistribuidoresQuery());
+            AnsiConsole.MarkupLine($"[yellow]Cantidad de distribuidores encontrados: {distribuidores?.Count() ?? 0}[/]");
             var table = new Table().AddColumn("ID").AddColumn("Nombre");
             foreach (var distribuidor in distribuidores)
             {

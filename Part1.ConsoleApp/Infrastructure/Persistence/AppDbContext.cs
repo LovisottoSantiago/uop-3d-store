@@ -45,6 +45,14 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
                 .Property(p => p.Precio)
                 .HasPrecision(18, 2);
 
+            modelBuilder.Entity<Cobranza>()
+                .Property(c => c.MontoPagado)
+                .HasPrecision(18, 2); 
+
+            modelBuilder.Entity<OrdenDeCompraDetalle>()
+                .Property(o => o.PrecioUnitario)
+                .HasPrecision(18, 2);
+
             modelBuilder.Entity<Producto>()
                 .HasDiscriminator<string>("TipoProducto")
                 .HasValue<Filamento>("Filamento")

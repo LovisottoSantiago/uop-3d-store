@@ -17,7 +17,10 @@ namespace Part1.ConsoleApp.Application.Queries.MarcaQueries.Get
         }
         public async Task<IEnumerable<Marca>> Handle(GetAllMarcasQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Marcas.ToListAsync();
+            return await _context.Marcas
+                .Include(m => m.DistribuidorMarcas)
+                    .ThenInclude(dm => dm.Distribuidor)
+                .ToListAsync();
         }
     }
 } 

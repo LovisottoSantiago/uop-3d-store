@@ -35,6 +35,18 @@ namespace Part1.ConsoleApp.Menu
                     case MenuOpciones.TipoMateriales:
                         await TipoMaterialMenu.MostrarSubMenu(mediator, _context);
                         break;
+                    case MenuOpciones.Estados:
+                        await EstadoMenu.MostrarSubMenu(mediator, _context);
+                        break;
+                    case MenuOpciones.OrdenesDeCompra:
+                        await OrdenDeCompraMenu.MostrarSubMenu(mediator, _context);
+                        break;
+                    case MenuOpciones.OrdenesDeCompraDetalle:
+                        await OrdenDeCompraDetalleMenu.MostrarSubMenu(mediator, _context);
+                        break;
+                    case MenuOpciones.Cobranzas:
+                        await CobranzaMenu.MostrarSubMenu(mediator, _context);
+                        break;
                     case MenuOpciones.Salir:
                         Console.WriteLine("Saliendo...");
                         return;
@@ -49,6 +61,10 @@ namespace Part1.ConsoleApp.Menu
             Marcas,
             Distribuidores,
             TipoMateriales,
+            Estados,
+            OrdenesDeCompra,
+            OrdenesDeCompraDetalle,
+            Cobranzas,
             Salir
         }
     }
