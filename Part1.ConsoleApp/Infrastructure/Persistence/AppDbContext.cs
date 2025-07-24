@@ -50,17 +50,15 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
             modelBuilder.Entity<Distribuidor>().ToTable("Distribuidor");
             modelBuilder.Entity<TipoMaterial>().ToTable("TipoMaterial");
 
-            modelBuilder.Entity<Producto>()
-                .HasOne(p => p.Distribuidor)
-                .WithMany(d => d.Productos)
-                .HasForeignKey(p => p.DistribuidorId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<DistribuidorMarca>()
+                  .HasOne(dm => dm.Marca)
+                  .WithMany(m => m.DistribuidorMarcas)
+                  .HasForeignKey(dm => dm.MarcaId);
 
-            modelBuilder.Entity<Producto>()
-                .HasOne(p => p.Marca)
-                .WithMany(m => m.Productos) 
-                .HasForeignKey(p => p.MarcaId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<DistribuidorMarca>()
+                .HasOne(dm => dm.Distribuidor)
+                .WithMany(d => d.DistribuidorMarcas)
+                .HasForeignKey(dm => dm.DistribuidorId);
 
             modelBuilder.Entity<Filamento>()
                 .HasOne(f => f.TipoMaterial)

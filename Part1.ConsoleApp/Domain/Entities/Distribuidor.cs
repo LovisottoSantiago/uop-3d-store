@@ -18,8 +18,7 @@ namespace Part1.ConsoleApp.Domain.Entities
         public required string Nombre { get; set; }
         public long Telefono { get; set; }
         public required string Direccion {  get; set; }
-        public List<Marca> Marcas { get; set; } = new();
-        public List<Producto> Productos { get; set; } = new List<Producto>();
+        public List<DistribuidorMarca> DistribuidorMarcas { get; set; } = new();
 
     }
 }

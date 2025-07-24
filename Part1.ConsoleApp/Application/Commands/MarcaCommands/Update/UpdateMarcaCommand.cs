@@ -7,6 +7,6 @@ namespace Part1.ConsoleApp.Application.Commands.MarcaCommands.Update
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public int DistribuidorId { get; set; }
+        public List<int> DistribuidorIds { get; set; }
     }
 } 

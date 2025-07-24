@@ -28,7 +28,6 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
                 Estado = request.Estado,
                 Color = request.Color,
                 MarcaId = request.MarcaId,
-                DistribuidorId = request.DistribuidorId,
                 TipoMaterialId = request.TipoMaterialId,
                 Peso = (float)request.Peso,
                 ImagenUrl = request.ImagenUrl

@@ -45,9 +45,11 @@ namespace Part1.ConsoleApp.Menu
         {
             var nombre = AnsiConsole.Ask<string>("Nombre de la marca:");
             var distribuidores = _context.Distribuidores.ToList();
-            var distribuidor = AnsiConsole.Prompt(
-                new SelectionPrompt<Distribuidor>()
-                    .Title("Seleccione el distribuidor:")
+
+            var distribuidoresSeleccionados = AnsiConsole.Prompt(
+                new MultiSelectionPrompt<Distribuidor>()
+                    .Title("Seleccione los distribuidores (puede elegir varios):")
+                    .NotRequired() 
                     .AddChoices(distribuidores)
                     .UseConverter(d => $"{d.Id} - {d.Nombre}")
             );
@@ -55,12 +57,12 @@ namespace Part1.ConsoleApp.Menu
             var command = new Application.Commands.MarcaCommands.Create.CreateMarcaCommand
             {
                 Nombre = nombre,
-                DistribuidorId = distribuidor.Id
+                DistribuidorIds = distribuidoresSeleccionados.Select(d => d.Id).ToList()
             };
             var resultado = await mediator.Send(command);
 
             if (resultado != null)
-                AnsiConsole.MarkupLine($"[green]Marca creada con éxito! ID: {resultado.Id}[/]");
+                AnsiConsole.MarkupLine($"[green]Marca creada con Ã©xito! ID: {resultado.Id}[/]");
             else
                 AnsiConsole.MarkupLine("[red]Error al crear la marca.[/]");
         }

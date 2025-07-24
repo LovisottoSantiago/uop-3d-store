@@ -36,7 +36,6 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update
             filamento.Estado = request.Estado;
             filamento.Color = request.Color;
             filamento.MarcaId = request.MarcaId;
-            filamento.DistribuidorId = request.DistribuidorId;
             filamento.TipoMaterialId = request.TipoMaterialId;
             filamento.Peso = (float)request.Peso;
             filamento.ImagenUrl = request.ImagenUrl;

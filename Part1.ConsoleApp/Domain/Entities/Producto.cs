@@ -33,10 +33,6 @@ namespace Part1.ConsoleApp.Domain.Entities
         [ForeignKey("Marca")]
         public int MarcaId { get; set; }
         public Marca Marca { get; set; }
-
-        [ForeignKey("Distribuidor")]
-        public int DistribuidorId { get; set; }
-        public Distribuidor Distribuidor { get; set; }
     }
 
 }

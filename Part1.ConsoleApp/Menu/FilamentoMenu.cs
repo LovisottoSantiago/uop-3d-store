@@ -67,14 +67,6 @@ namespace Part1.ConsoleApp.Menu
                     .UseConverter(m => $"{m.Id} - {m.Nombre}")
             );
 
-            var distribuidores = _context.Distribuidores.ToList();
-            var distribuidor = AnsiConsole.Prompt(
-                new SelectionPrompt<Distribuidor>()
-                    .Title("Seleccione el distribuidor:")
-                    .AddChoices(distribuidores)
-                    .UseConverter(d => $"{d.Id} - {d.Nombre}")
-            );
-
             var nombreGenerado = $"{peso}KG {marca.Nombre.ToUpper()} {tipoMaterial.Nombre.ToUpper()} {color.ToUpper()}";
             var usarNombreGenerado = AnsiConsole.Confirm($"¿Deseás usar el nombre generado automáticamente: [yellow]{nombreGenerado}[/]?", true);
 
@@ -93,7 +85,6 @@ namespace Part1.ConsoleApp.Menu
                 Color = color,
                 TipoMaterialId = tipoMaterial.Id,
                 MarcaId = marca.Id,
-                DistribuidorId = distribuidor.Id,
                 ImagenUrl = imagen
             };
 
@@ -112,10 +103,10 @@ namespace Part1.ConsoleApp.Menu
         private static async Task ListarFilamentos(IMediator mediator)
         {
             var filamentos = await mediator.Send(new Application.Queries.FilamentoQueries.Get.GetAllFilamentosQuery());
-            var table = new Table().AddColumn("ID").AddColumn("Nombre");
+            var table = new Table().AddColumn("ID").AddColumn("Nombre").AddColumn("Precio").AddColumn("Stock");
             foreach (var filamento in filamentos)
             {
-                table.AddRow(filamento.Id.ToString(), filamento.Nombre);
+                table.AddRow(filamento.Id.ToString(), filamento.Nombre, filamento.Precio.ToString(), filamento.Stock.ToString());
             }
             AnsiConsole.Write(table);
         }

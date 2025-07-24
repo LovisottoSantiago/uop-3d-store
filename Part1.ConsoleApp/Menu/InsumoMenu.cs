@@ -75,7 +75,6 @@ namespace Part1.ConsoleApp.Menu
                 Estado = estado,
                 Color = color,
                 MarcaId = marca.Id,
-                DistribuidorId = distribuidor.Id,
                 ImagenUrl = imagen
             };
 

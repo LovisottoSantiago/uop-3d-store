@@ -18,8 +18,11 @@ namespace Part1.ConsoleApp.Application.Commands.MarcaCommands.Create
             var marca = new Marca
             {
                 Nombre = request.Nombre,
-                DistribuidorId = request.DistribuidorId
+                DistribuidorMarcas = request.DistribuidorIds?
+                    .Select(id => new DistribuidorMarca { DistribuidorId = id })
+                    .ToList() ?? new List<DistribuidorMarca>()
             };
+
             _context.Marcas.Add(marca);
             await _context.SaveChangesAsync();
             return marca;

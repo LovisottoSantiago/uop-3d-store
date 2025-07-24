@@ -23,7 +23,21 @@ namespace Part1.ConsoleApp.Application.Commands.MarcaCommands.Update
             }
 
             marca.Nombre = request.Nombre;
-            marca.DistribuidorId = request.DistribuidorId;
+
+            var nuevosIds = request.DistribuidorIds ?? new List<int>();
+            marca.DistribuidorMarcas.RemoveAll(dm => !nuevosIds.Contains(dm.DistribuidorId));
+            var existentes = marca.DistribuidorMarcas.Select(dm => dm.DistribuidorId).ToList();
+            var aAgregar = nuevosIds.Except(existentes);
+
+            foreach (var distribuidorId in aAgregar)
+            {
+                marca.DistribuidorMarcas.Add(new DistribuidorMarca
+                {
+                    MarcaId = marca.Id,
+                    DistribuidorId = distribuidorId
+                });
+            }
+
 
             await _context.SaveChangesAsync();
             return marca;

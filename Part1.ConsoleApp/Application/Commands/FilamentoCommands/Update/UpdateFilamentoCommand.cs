@@ -17,7 +17,6 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update
         public bool Estado { get; set; } = true;
         public string? Color { get; set; }
         public int MarcaId { get; set; }
-        public int DistribuidorId { get; set; }
         public int TipoMaterialId { get; set; }
         public float? Peso { get; set; }
         public string? ImagenUrl { get; set; }
