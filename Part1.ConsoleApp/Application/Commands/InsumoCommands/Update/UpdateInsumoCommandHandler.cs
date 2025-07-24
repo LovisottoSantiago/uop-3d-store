@@ -34,6 +34,7 @@ namespace Part1.ConsoleApp.Application.Commands.InsumoCommands.Update
             insumo.Color = request.Color;
             insumo.MarcaId = request.MarcaId;
             insumo.DistribuidorId = request.DistribuidorId;
+            insumo.ImagenUrl = request.ImagenUrl;
             
             await _context.SaveChangesAsync();
             return insumo;

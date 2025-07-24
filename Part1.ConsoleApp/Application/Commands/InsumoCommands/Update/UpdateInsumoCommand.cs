@@ -18,5 +18,6 @@ namespace Part1.ConsoleApp.Application.Commands.InsumoCommands.Update
         public string? Color { get; set; }
         public int MarcaId { get; set; }
         public int DistribuidorId { get; set; }
+        public string? ImagenUrl { get; set; }
     }
 }

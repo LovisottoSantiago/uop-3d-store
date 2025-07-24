@@ -22,6 +22,7 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
         public int DistribuidorId { get; set; }
         public int TipoMaterialId { get; set; }
         public float? Peso { get; set; }
+        public string? ImagenUrl { get; set; }
     }
 
 }

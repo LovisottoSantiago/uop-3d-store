@@ -30,7 +30,8 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
                 MarcaId = request.MarcaId,
                 DistribuidorId = request.DistribuidorId,
                 TipoMaterialId = request.TipoMaterialId,
-                Peso = (float)request.Peso
+                Peso = (float)request.Peso,
+                ImagenUrl = request.ImagenUrl
             };
 
             _context.Filamentos.Add(filamento);

@@ -3,60 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\consolemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\consolemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\insumomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\insumomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\tipomaterialcommands\\create\\createtipomaterialcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\tipomaterialcommands\\create\\createtipomaterialcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\menu\\filamentomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\menu\\filamentomenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\tipomaterialcommands\\create\\createtipomaterialcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\tipomaterialcommands\\create\\createtipomaterialcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\insumocommands\\update\\updateinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\insumocommands\\update\\updateinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\insumocommands\\update\\updateinsumocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\insumocommands\\update\\updateinsumocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\marcacommands\\create\\createmarcacommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\insumocommands\\create\\createinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\insumocommands\\create\\createinsumocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\insumocommands\\create\\createinsumocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\insumocommands\\create\\createinsumocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\filamentocommands\\create\\createfilamentocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\filamentocommands\\create\\createfilamentocommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\filamentocommands\\create\\createfilamentocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\filamentocommands\\create\\createfilamentocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\update\\updatedistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\update\\updatedistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\update\\updatedistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\update\\updatedistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\delete\\deletedistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\delete\\deletedistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\delete\\deletedistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\delete\\deletedistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\create\\createdistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\create\\createdistribuidorcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|c:\\users\\administrator\\documents\\github\\uop-3d-store\\part1.consoleapp\\application\\commands\\distribuidorcommands\\create\\createdistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E64B5EFB-9558-4CE8-9F2C-195B2EB833D7}|Part1.ConsoleApp\\Part1.ConsoleApp.csproj|solutionrelative:part1.consoleapp\\application\\commands\\distribuidorcommands\\create\\createdistribuidorcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,66 +43,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ConsoleMenu.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\ConsoleMenu.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "InsumoMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\InsumoMenu.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwE4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:37:25.415Z",
+              "WhenOpened": "2025-07-24T02:55:50.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreateTipoMaterialCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommandHandler.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Title": "FilamentoMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Menu\\FilamentoMenu.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwFkAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:37:10.276Z",
+              "WhenOpened": "2025-07-24T02:55:09.473Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CreateTipoMaterialCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\TipoMaterialCommands\\Create\\CreateTipoMaterialCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Title": "UpdateInsumoCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommandHandler.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommandHandler.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommandHandler.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:37:00.938Z",
+              "WhenOpened": "2025-07-24T02:54:55.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "CreateMarcaCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "UpdateInsumoCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommand.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommand.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommand.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Update\\UpdateInsumoCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:55.567Z",
+              "WhenOpened": "2025-07-24T02:54:51.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CreateMarcaCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\MarcaCommands\\Create\\CreateMarcaCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CreateInsumoCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommandHandler.cs",
+              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommandHandler.cs",
+              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommandHandler.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:53.607Z",
+              "WhenOpened": "2025-07-24T02:54:37.334Z",
               "EditorCaption": ""
             },
             {
@@ -145,113 +113,9 @@
               "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommand.cs",
               "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommand.cs",
               "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\InsumoCommands\\Create\\CreateInsumoCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:48.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CreateFilamentoCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:42.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateFilamentoCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\FilamentoCommands\\Create\\CreateFilamentoCommand.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:39.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UpdateDistribuidorCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommandHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:33.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UpdateDistribuidorCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Update\\UpdateDistribuidorCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:31.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DeleteDistribuidorCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommandHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:25.563Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DeleteDistribuidorCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Delete\\DeleteDistribuidorCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:23.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateDistribuidorCommandHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommandHandler.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommandHandler.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommandHandler.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommandHandler.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:36:18.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateDistribuidorCommand.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommand.cs",
-              "RelativeDocumentMoniker": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommand.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Documents\\Github\\uop-3d-store\\Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommand.cs",
-              "RelativeToolTip": "Part1.ConsoleApp\\Application\\Commands\\DistribuidorCommands\\Create\\CreateDistribuidorCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T01:35:56.445Z",
+              "WhenOpened": "2025-07-24T02:54:33.597Z",
               "EditorCaption": ""
             }
           ]

@@ -10,7 +10,7 @@ namespace Part1.ConsoleApp.Menu
 {
     public static class MarcaMenu
     {
-        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext dbContext)
+        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext _context)
         {
             while (true)
             {
@@ -23,7 +23,7 @@ namespace Part1.ConsoleApp.Menu
                 switch (opcion)
                 {
                     case MarcaOpciones.Agregar:
-                        
+                        await AgregarMarca(mediator, _context);
                         break;
                     case MarcaOpciones.Listar:
                         await ListarMarcas(mediator);
@@ -41,7 +41,29 @@ namespace Part1.ConsoleApp.Menu
             Volver
         }
 
-        
+        private static async Task AgregarMarca(IMediator mediator, AppDbContext _context)
+        {
+            var nombre = AnsiConsole.Ask<string>("Nombre de la marca:");
+            var distribuidores = _context.Distribuidores.ToList();
+            var distribuidor = AnsiConsole.Prompt(
+                new SelectionPrompt<Distribuidor>()
+                    .Title("Seleccione el distribuidor:")
+                    .AddChoices(distribuidores)
+                    .UseConverter(d => $"{d.Id} - {d.Nombre}")
+            );
+
+            var command = new Application.Commands.MarcaCommands.Create.CreateMarcaCommand
+            {
+                Nombre = nombre,
+                DistribuidorId = distribuidor.Id
+            };
+            var resultado = await mediator.Send(command);
+
+            if (resultado != null)
+                AnsiConsole.MarkupLine($"[green]Marca creada con éxito! ID: {resultado.Id}[/]");
+            else
+                AnsiConsole.MarkupLine("[red]Error al crear la marca.[/]");
+        }
 
         private static async Task ListarMarcas(IMediator mediator)
         {

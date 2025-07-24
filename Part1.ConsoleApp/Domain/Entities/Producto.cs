@@ -27,7 +27,9 @@ namespace Part1.ConsoleApp.Domain.Entities
         
         [Required]
         public required string Color { get; set; }
-        
+        [Required]
+        public required string ImagenUrl { get; set; }
+
         [ForeignKey("Marca")]
         public int MarcaId { get; set; }
         public Marca Marca { get; set; }

@@ -39,6 +39,7 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update
             filamento.DistribuidorId = request.DistribuidorId;
             filamento.TipoMaterialId = request.TipoMaterialId;
             filamento.Peso = (float)request.Peso;
+            filamento.ImagenUrl = request.ImagenUrl;
 
             await _context.SaveChangesAsync();
             return filamento;

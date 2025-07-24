@@ -10,7 +10,7 @@ namespace Part1.ConsoleApp.Menu
 {
     public static class FilamentoMenu
     {
-        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext dbContext)
+        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext _context)
         {
             while (true)
             {
@@ -23,16 +23,10 @@ namespace Part1.ConsoleApp.Menu
                 switch (opcion)
                 {
                     case FilamentoOpciones.Agregar:
-                        await AgregarFilamento(mediator, dbContext);
+                        await AgregarFilamento(mediator, _context);
                         break;
-                    case FilamentoOpciones.Borrar:
-                        Console.WriteLine("BorrarFilamento");
-                        break;
-                    case FilamentoOpciones.Actualizar:
-                        Console.WriteLine("ActualizarFilamento");
-                        break;
-                    case FilamentoOpciones.Ver:
-                        Console.WriteLine("VerFilamento");
+                    case FilamentoOpciones.Listar:
+                        await ListarFilamentos(mediator);
                         break;
                     case FilamentoOpciones.Volver:
                         return;
@@ -43,13 +37,11 @@ namespace Part1.ConsoleApp.Menu
         enum FilamentoOpciones
         {
             Agregar,
-            Borrar,
-            Actualizar,
-            Ver,
+            Listar,
             Volver
         }
 
-        private static async Task AgregarFilamento(IMediator mediator, AppDbContext dbContext)
+        private static async Task AgregarFilamento(IMediator mediator, AppDbContext _context)
         {
             Console.WriteLine("\n[green]Agregar Filamento:");
             var nombre = AnsiConsole.Ask<string>("Nombre:");
@@ -58,8 +50,9 @@ namespace Part1.ConsoleApp.Menu
             var stock = AnsiConsole.Ask<int>("Stock:");
             var estado = AnsiConsole.Confirm("¿Está activo?", true);
             var color = AnsiConsole.Ask<string>("Color:");
+            var imagen = AnsiConsole.Ask<string>("Url de la imagen:");
 
-            var tipos = dbContext.TipoMateriales.ToList();
+            var tipos = _context.TipoMateriales.ToList();
             var tipoMaterial = AnsiConsole.Prompt(
                 new SelectionPrompt<TipoMaterial>()
                     .Title("Seleccione el tipo de material:")
@@ -67,7 +60,7 @@ namespace Part1.ConsoleApp.Menu
                     .UseConverter(t => $"{t.Id} - {t.Nombre}")
             );
 
-            var marcas = dbContext.Marcas.ToList();
+            var marcas = _context.Marcas.ToList();
             var marca = AnsiConsole.Prompt(
                 new SelectionPrompt<Marca>()
                     .Title("Seleccione la marca:")
@@ -75,7 +68,7 @@ namespace Part1.ConsoleApp.Menu
                     .UseConverter(m => $"{m.Id} - {m.Nombre}")
             );
 
-            var distribuidores = dbContext.Distribuidores.ToList();
+            var distribuidores = _context.Distribuidores.ToList();
             var distribuidor = AnsiConsole.Prompt(
                 new SelectionPrompt<Distribuidor>()
                     .Title("Seleccione el distribuidor:")
@@ -93,7 +86,8 @@ namespace Part1.ConsoleApp.Menu
                 Color = color,
                 TipoMaterialId = tipoMaterial.Id,
                 MarcaId = marca.Id,
-                DistribuidorId = distribuidor.Id
+                DistribuidorId = distribuidor.Id,
+                ImagenUrl = imagen
             };
 
             var resultado = await mediator.Send(command);
@@ -107,5 +101,17 @@ namespace Part1.ConsoleApp.Menu
                 AnsiConsole.MarkupLine("[red]Error al crear el filamento.[/]");
             }
         }
+
+        private static async Task ListarFilamentos(IMediator mediator)
+        {
+            var filamentos = await mediator.Send(new Application.Queries.FilamentoQueries.Get.GetAllFilamentosQuery());
+            var table = new Table().AddColumn("ID").AddColumn("Nombre");
+            foreach (var filamento in filamentos)
+            {
+                table.AddRow(filamento.Id.ToString(), filamento.Nombre);
+            }
+            AnsiConsole.Write(table);
+        }
+
     }
 } 

@@ -28,7 +28,8 @@ namespace Part1.ConsoleApp.Application.Commands.InsumoCommands.Create
                 Estado = request.Estado,
                 Color = request.Color,
                 MarcaId = request.MarcaId,
-                DistribuidorId = request.DistribuidorId
+                DistribuidorId = request.DistribuidorId,
+                ImagenUrl = request.ImagenUrl
             };
 
             _context.Insumos.Add(insumo);

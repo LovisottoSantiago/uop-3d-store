@@ -10,7 +10,7 @@ namespace Part1.ConsoleApp.Menu
 {
     public static class DistribuidorMenu
     {
-        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext dbContext)
+        public static async Task MostrarSubMenu(IMediator mediator, AppDbContext _context)
         {
             while (true)
             {
@@ -43,7 +43,7 @@ namespace Part1.ConsoleApp.Menu
 
         private static async Task AgregarDistribuidor(IMediator mediator)
         {
-            var nombre = AnsiConsole.Ask<string>("Nombre del distribuidor:");
+            var nombre = AnsiConsole.Ask<string>("Nombre de la marca:");
             var direccion = AnsiConsole.Ask<string>("Dirección del distribuidor:");
             var telefono = AnsiConsole.Ask<long>("Teléfono del distribuidor:");
             var command = new Application.Commands.DistribuidorCommands.Create.CreateDistribuidorCommand
@@ -53,6 +53,7 @@ namespace Part1.ConsoleApp.Menu
                 Telefono = telefono
             };
             var resultado = await mediator.Send(command);
+            
             if (resultado != null)
                 AnsiConsole.MarkupLine($"[green]Distribuidor creado con éxito! ID: {resultado.Id}[/]");
             else

@@ -8,7 +8,7 @@ namespace Part1.ConsoleApp.Menu
 {
     public static class ConsoleMenu
     {
-        public static async Task MostrarMenu(IMediator mediator, AppDbContext dbContext)
+        public static async Task MostrarMenu(IMediator mediator, AppDbContext _context)
         {
             while (true)
             {
@@ -21,19 +21,19 @@ namespace Part1.ConsoleApp.Menu
                 switch (opcion)
                 {
                     case MenuOpciones.Filamentos:
-                        await FilamentoMenu.MostrarSubMenu(mediator, dbContext);
+                        await FilamentoMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.Insumos:
-                        await InsumoMenu.MostrarSubMenu(mediator, dbContext);
+                        await InsumoMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.Marcas:
-                        await MarcaMenu.MostrarSubMenu(mediator, dbContext);
+                        await MarcaMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.Distribuidores:
-                        await DistribuidorMenu.MostrarSubMenu(mediator, dbContext);
+                        await DistribuidorMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.TipoMateriales:
-                        await TipoMaterialMenu.MostrarSubMenu(mediator, dbContext);
+                        await TipoMaterialMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.Salir:
                         Console.WriteLine("Saliendo...");
