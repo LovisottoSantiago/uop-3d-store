@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Part1.ConsoleApp.Domain.Entities;
 using Part1.ConsoleApp.Infrastructure.Persistence;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Part1.ConsoleApp.Application.Queries.TipoMaterialQueries.Get
 {

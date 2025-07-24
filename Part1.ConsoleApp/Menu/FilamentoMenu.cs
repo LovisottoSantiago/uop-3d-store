@@ -44,11 +44,10 @@ namespace Part1.ConsoleApp.Menu
         private static async Task AgregarFilamento(IMediator mediator, AppDbContext _context)
         {
             Console.WriteLine("\n[green]Agregar Filamento:");
-            var nombre = AnsiConsole.Ask<string>("Nombre:");
             var precio = AnsiConsole.Ask<decimal>("Precio:");
-            var peso = AnsiConsole.Ask<float>("Peso:");
+            var peso = AnsiConsole.Ask<float>("Peso (KG):");
             var stock = AnsiConsole.Ask<int>("Stock:");
-            var estado = AnsiConsole.Confirm("¿Está activo?", true);
+            var estado = true;
             var color = AnsiConsole.Ask<string>("Color:");
             var imagen = AnsiConsole.Ask<string>("Url de la imagen:");
 
@@ -76,9 +75,17 @@ namespace Part1.ConsoleApp.Menu
                     .UseConverter(d => $"{d.Id} - {d.Nombre}")
             );
 
+            var nombreGenerado = $"{peso}KG {marca.Nombre.ToUpper()} {tipoMaterial.Nombre.ToUpper()} {color.ToUpper()}";
+            var usarNombreGenerado = AnsiConsole.Confirm($"¿Deseás usar el nombre generado automáticamente: [yellow]{nombreGenerado}[/]?", true);
+
+            var nombreFinal = usarNombreGenerado
+                ? nombreGenerado
+                : AnsiConsole.Ask<string>("Ingresá un nombre personalizado para el filamento:");
+
+
             var command = new Application.Commands.FilamentoCommands.Create.CreateFilamentoCommand
             {
-                Nombre = nombre,
+                Nombre = nombreFinal,
                 Precio = precio,
                 Peso = peso,
                 Stock = stock,

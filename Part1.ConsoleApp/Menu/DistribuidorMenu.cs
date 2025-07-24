@@ -43,7 +43,7 @@ namespace Part1.ConsoleApp.Menu
 
         private static async Task AgregarDistribuidor(IMediator mediator)
         {
-            var nombre = AnsiConsole.Ask<string>("Nombre de la marca:");
+            var nombre = AnsiConsole.Ask<string>("Nombre del distribuidor:");
             var direccion = AnsiConsole.Ask<string>("Dirección del distribuidor:");
             var telefono = AnsiConsole.Ask<long>("Teléfono del distribuidor:");
             var command = new Application.Commands.DistribuidorCommands.Create.CreateDistribuidorCommand
