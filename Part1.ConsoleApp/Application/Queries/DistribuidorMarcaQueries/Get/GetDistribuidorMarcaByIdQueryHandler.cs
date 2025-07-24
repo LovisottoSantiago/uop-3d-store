@@ -3,6 +3,7 @@ using Part1.ConsoleApp.Domain.Entities;
 using Part1.ConsoleApp.Infrastructure.Persistence;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Part1.ConsoleApp.Application.Queries.DistribuidorMarcaQueries.Get
 {
@@ -15,8 +16,7 @@ namespace Part1.ConsoleApp.Application.Queries.DistribuidorMarcaQueries.Get
         }
         public async Task<DistribuidorMarca> Handle(GetDistribuidorMarcaByIdQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de consulta por Id
-            return null;
+            return await _context.DistribuidorMarcas.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
         }
     }
 } 

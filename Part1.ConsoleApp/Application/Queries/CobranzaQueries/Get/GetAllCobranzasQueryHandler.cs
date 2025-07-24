@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Part1.ConsoleApp.Application.Queries.CobranzaQueries.Get
 {
@@ -17,8 +18,7 @@ namespace Part1.ConsoleApp.Application.Queries.CobranzaQueries.Get
         }
         public async Task<List<Cobranza>> Handle(GetAllCobranzasQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de consulta
-            return null;
+            return await _context.Cobranzas.ToListAsync(cancellationToken);
         }
     }
 } 

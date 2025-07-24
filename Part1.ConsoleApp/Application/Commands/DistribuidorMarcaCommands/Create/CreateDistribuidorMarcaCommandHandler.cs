@@ -15,8 +15,15 @@ namespace Part1.ConsoleApp.Application.Commands.DistribuidorMarcaCommands.Create
         }
         public async Task<DistribuidorMarca> Handle(CreateDistribuidorMarcaCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de creación
-            return null;
+            var distribuidorMarca = new DistribuidorMarca
+            {
+                DistribuidorId = request.DistribuidorId,
+                MarcaId = request.MarcaId
+            };
+
+            _context.Add(distribuidorMarca);
+            await _context.SaveChangesAsync();
+            return distribuidorMarca;
         }
     }
 } 

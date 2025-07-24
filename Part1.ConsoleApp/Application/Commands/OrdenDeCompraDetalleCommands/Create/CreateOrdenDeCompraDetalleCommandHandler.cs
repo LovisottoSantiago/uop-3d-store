@@ -15,8 +15,17 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraDetalleCommands.Cre
         }
         public async Task<OrdenDeCompraDetalle> Handle(CreateOrdenDeCompraDetalleCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de creación
-            return null;
+            var ordenDeCompraDetalle = new OrdenDeCompraDetalle
+            {
+                OrdenDeCompraId = request.OrdenDeCompraId,
+                ProductoId = request.ProductoId,
+                Cantidad = request.Cantidad,
+                PrecioUnitario = request.PrecioUnitario
+            };
+
+            _context.Add(ordenDeCompraDetalle);
+            await _context.SaveChangesAsync();
+            return ordenDeCompraDetalle;
         }
     }
 } 

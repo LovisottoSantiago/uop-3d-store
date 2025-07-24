@@ -3,6 +3,7 @@ using Part1.ConsoleApp.Domain.Entities;
 using Part1.ConsoleApp.Infrastructure.Persistence;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Part1.ConsoleApp.Application.Queries.OrdenDeCompraDetalleQueries.Get
 {
@@ -15,8 +16,7 @@ namespace Part1.ConsoleApp.Application.Queries.OrdenDeCompraDetalleQueries.Get
         }
         public async Task<OrdenDeCompraDetalle> Handle(GetOrdenDeCompraDetalleByIdQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de consulta por Id
-            return null;
+            return await _context.OrdenDeCompraDetalles.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
         }
     }
 } 

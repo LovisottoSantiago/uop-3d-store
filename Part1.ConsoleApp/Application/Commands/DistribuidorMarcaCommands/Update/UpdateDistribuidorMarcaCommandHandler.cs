@@ -15,8 +15,18 @@ namespace Part1.ConsoleApp.Application.Commands.DistribuidorMarcaCommands.Update
         }
         public async Task<DistribuidorMarca> Handle(UpdateDistribuidorMarcaCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de actualización
-            return null;
+            var distribuidorMarca = _context.DistribuidorMarcas.FirstOrDefault(d => d.Id == request.Id);
+
+            if (distribuidorMarca == null)
+            {
+                return default;
+            }
+
+            distribuidorMarca.DistribuidorId = request.DistribuidorId;
+            distribuidorMarca.MarcaId = request.MarcaId;
+
+            await _context.SaveChangesAsync();
+            return distribuidorMarca;
         }
     }
 } 

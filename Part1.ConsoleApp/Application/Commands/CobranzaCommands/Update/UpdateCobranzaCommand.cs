@@ -5,6 +5,10 @@ namespace Part1.ConsoleApp.Application.Commands.CobranzaCommands.Update
 {
     public class UpdateCobranzaCommand : IRequest<Cobranza>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
+        public int OrdenDeCompraId { get; set; }
+        public DateTime FechaPago { get; set; }
+        public decimal MontoPagado { get; set; }
+        public int EstadoId { get; set; }
     }
 } 

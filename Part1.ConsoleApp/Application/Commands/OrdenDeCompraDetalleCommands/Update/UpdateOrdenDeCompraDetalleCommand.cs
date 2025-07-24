@@ -5,6 +5,10 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraDetalleCommands.Upd
 {
     public class UpdateOrdenDeCompraDetalleCommand : IRequest<OrdenDeCompraDetalle>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
+        public int OrdenDeCompraId { get; set; }
+        public int ProductoId { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
     }
 } 

@@ -5,6 +5,8 @@ namespace Part1.ConsoleApp.Application.Commands.DistribuidorMarcaCommands.Update
 {
     public class UpdateDistribuidorMarcaCommand : IRequest<DistribuidorMarca>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
+        public int DistribuidorId { get; set; }
+        public int MarcaId { get; set; }
     }
 } 

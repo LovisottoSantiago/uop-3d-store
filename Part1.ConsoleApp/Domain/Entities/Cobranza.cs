@@ -12,9 +12,9 @@ namespace Part1.ConsoleApp.Domain.Entities
         [ForeignKey("OrdenDeCompra")]
         public int OrdenDeCompraId { get; set; }
         public OrdenDeCompra OrdenDeCompra { get; set; }
-
         public DateTime FechaPago { get; set; }
         public decimal MontoPagado { get; set; }
-        public string Estado { get; set; } // Ej: Pagada, Parcial, Pendiente
+        public int EstadoId { get; set; } = 0;
+        public Estado Estado { get; set; }
     }
 } 

@@ -15,8 +15,21 @@ namespace Part1.ConsoleApp.Application.Commands.CobranzaCommands.Update
         }
         public async Task<Cobranza> Handle(UpdateCobranzaCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de actualización
-            return null;
+            var cobranza = _context.Cobranzas.FirstOrDefault(c => c.Id ==  request.Id);
+
+            if (cobranza == null)
+            {
+                return default;
+            }
+
+            cobranza.Id = request.Id;
+            cobranza.OrdenDeCompraId = request.OrdenDeCompraId;
+            cobranza.FechaPago = request.FechaPago;
+            cobranza.MontoPagado = request.MontoPagado;
+            cobranza.EstadoId = request.EstadoId;
+
+            await _context.SaveChangesAsync();
+            return cobranza;
         }
     }
 } 

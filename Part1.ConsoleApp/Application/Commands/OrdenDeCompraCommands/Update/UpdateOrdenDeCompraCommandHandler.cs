@@ -15,8 +15,19 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Update
         }
         public async Task<OrdenDeCompra> Handle(UpdateOrdenDeCompraCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de actualización
-            return null;
+            var ordenDeCompra = _context.OrdenDeCompras.FirstOrDefault(o => o.Id ==  request.Id);
+
+            if (ordenDeCompra == null)
+            {
+                return default;
+            }
+
+            ordenDeCompra.Fecha = request.Fecha;
+            ordenDeCompra.EstadoId = request.EstadoId;
+            ordenDeCompra.Detalles = request.Detalles;
+
+            await _context.SaveChangesAsync();
+            return ordenDeCompra;
         }
     }
 } 

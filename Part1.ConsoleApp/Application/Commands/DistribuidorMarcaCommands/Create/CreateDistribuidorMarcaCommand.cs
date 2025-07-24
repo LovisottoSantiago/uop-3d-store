@@ -5,6 +5,7 @@ namespace Part1.ConsoleApp.Application.Commands.DistribuidorMarcaCommands.Create
 {
     public class CreateDistribuidorMarcaCommand : IRequest<DistribuidorMarca>
     {
-        // TODO: Agregar propiedades necesarias
+        public int DistribuidorId { get; set; }
+        public int MarcaId { get; set; }
     }
 } 

@@ -5,6 +5,6 @@ namespace Part1.ConsoleApp.Application.Queries.CobranzaQueries.Get
 {
     public class GetCobranzaByIdQuery : IRequest<Cobranza>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
     }
 } 

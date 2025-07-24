@@ -5,6 +5,9 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Update
 {
     public class UpdateOrdenDeCompraCommand : IRequest<OrdenDeCompra>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
+        public DateTime Fecha { get; set; }
+        public int EstadoId { get; set; }
+        public List<OrdenDeCompraDetalle> Detalles { get; set; }
     }
 } 

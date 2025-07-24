@@ -5,6 +5,6 @@ namespace Part1.ConsoleApp.Application.Queries.DistribuidorMarcaQueries.Get
 {
     public class GetDistribuidorMarcaByIdQuery : IRequest<DistribuidorMarca>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
     }
 } 

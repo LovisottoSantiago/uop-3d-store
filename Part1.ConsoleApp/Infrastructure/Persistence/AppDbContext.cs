@@ -12,6 +12,11 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Distribuidor> Distribuidores { get; set; }
         public DbSet<TipoMaterial> TipoMateriales { get; set; }
+        public DbSet<DistribuidorMarca> DistribuidorMarcas { get; set; }
+        public DbSet<Cobranza> Cobranzas {  get; set; }
+        public DbSet<OrdenDeCompra> OrdenDeCompras { get; set; }
+        public DbSet<OrdenDeCompraDetalle> OrdenDeCompraDetalles { get; set; }
+        public DbSet<Estado> Estados { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
@@ -49,6 +54,11 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
             modelBuilder.Entity<Marca>().ToTable("Marca");
             modelBuilder.Entity<Distribuidor>().ToTable("Distribuidor");
             modelBuilder.Entity<TipoMaterial>().ToTable("TipoMaterial");
+            modelBuilder.Entity<DistribuidorMarca>().ToTable("DistribuidorMarca");
+            modelBuilder.Entity<Cobranza>().ToTable("Cobranza");
+            modelBuilder.Entity<OrdenDeCompra>().ToTable("OrdenDeCompra");
+            modelBuilder.Entity<OrdenDeCompraDetalle>().ToTable("OrdenDeCompraDetalle");
+            modelBuilder.Entity<Estado>().ToTable("Estado");
 
             modelBuilder.Entity<DistribuidorMarca>()
                   .HasOne(dm => dm.Marca)
@@ -64,6 +74,12 @@ namespace Part1.ConsoleApp.Infrastructure.Persistence
                 .HasOne(f => f.TipoMaterial)
                 .WithMany()
                 .HasForeignKey(f => f.TipoMaterialId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Cobranza>()
+                .HasOne(c => c.Estado)
+                .WithMany()
+                .HasForeignKey(c => c.EstadoId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

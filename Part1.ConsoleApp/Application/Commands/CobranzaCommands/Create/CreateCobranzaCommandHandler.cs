@@ -15,8 +15,17 @@ namespace Part1.ConsoleApp.Application.Commands.CobranzaCommands.Create
         }
         public async Task<Cobranza> Handle(CreateCobranzaCommand request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de creación
-            return null;
+            var cobranza = new Cobranza
+            {
+                OrdenDeCompraId = request.OrdenDeCompraId,
+                FechaPago = request.FechaPago,
+                MontoPagado = request.MontoPagado,
+                EstadoId = request.EstadoId
+            };
+
+            _context.Add(cobranza);
+            await _context.SaveChangesAsync();
+            return cobranza;
         }
     }
 } 

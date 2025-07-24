@@ -1,9 +1,10 @@
 using MediatR;
+using Part1.ConsoleApp.Domain.Entities;
 
 namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Delete
 {
-    public class DeleteOrdenDeCompraCommand : IRequest<bool>
+    public class DeleteOrdenDeCompraCommand : IRequest<OrdenDeCompra>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
     }
 } 

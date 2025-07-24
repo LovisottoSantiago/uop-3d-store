@@ -5,6 +5,8 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Create
 {
     public class CreateOrdenDeCompraCommand : IRequest<OrdenDeCompra>
     {
-        // TODO: Agregar propiedades necesarias
+        public DateTime Fecha {  get; set; }
+        public int EstadoId { get; set; }
+        public List<OrdenDeCompraDetalle> Detalles { get; set; }
     }
 } 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Part1.ConsoleApp.Application.Queries.DistribuidorMarcaQueries.Get
 {
@@ -17,8 +18,7 @@ namespace Part1.ConsoleApp.Application.Queries.DistribuidorMarcaQueries.Get
         }
         public async Task<List<DistribuidorMarca>> Handle(GetAllDistribuidorMarcasQuery request, CancellationToken cancellationToken)
         {
-            // TODO: Implementar lógica de consulta
-            return null;
+            return await _context.DistribuidorMarcas.ToListAsync(cancellationToken);
         }
     }
 } 

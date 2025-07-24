@@ -3,8 +3,8 @@ using Part1.ConsoleApp.Domain.Entities;
 
 namespace Part1.ConsoleApp.Application.Commands.DistribuidorMarcaCommands.Delete
 {
-    public class DeleteDistribuidorMarcaCommand : IRequest<bool>
+    public class DeleteDistribuidorMarcaCommand : IRequest<DistribuidorMarca>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
     }
 } 

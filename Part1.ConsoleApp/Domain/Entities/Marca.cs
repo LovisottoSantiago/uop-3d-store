@@ -16,7 +16,7 @@ namespace Part1.ConsoleApp.Domain.Entities
         
         [Required]
         public required string Nombre { get; set; }
-        
+       
         public List<DistribuidorMarca> DistribuidorMarcas { get; set; } = new();
     }
 }

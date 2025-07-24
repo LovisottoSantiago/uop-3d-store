@@ -5,6 +5,6 @@ namespace Part1.ConsoleApp.Application.Queries.OrdenDeCompraDetalleQueries.Get
 {
     public class GetOrdenDeCompraDetalleByIdQuery : IRequest<OrdenDeCompraDetalle>
     {
-        // TODO: Agregar propiedades necesarias
+        public int Id { get; set; }
     }
 } 

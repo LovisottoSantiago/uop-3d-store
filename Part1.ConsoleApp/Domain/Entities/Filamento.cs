@@ -13,7 +13,6 @@ namespace Part1.ConsoleApp.Domain.Entities
         [ForeignKey("TipoMaterial")]
         public int TipoMaterialId { get; set; }
         public TipoMaterial TipoMaterial { get; set; }
-
         public required float Peso { get; set; }
 
     }
