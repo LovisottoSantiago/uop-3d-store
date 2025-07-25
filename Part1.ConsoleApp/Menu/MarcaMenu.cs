@@ -53,7 +53,7 @@ namespace Part1.ConsoleApp.Menu
             var distribuidoresSeleccionados = AnsiConsole.Prompt(
                 new MultiSelectionPrompt<Distribuidor>()
                     .Title("Seleccione los distribuidores (puede elegir varios):")
-                    .NotRequired() 
+                    .NotRequired()
                     .AddChoices(distribuidores)
                     .UseConverter(d => $"{d.Id} - {d.Nombre}")
             );
@@ -90,7 +90,6 @@ namespace Part1.ConsoleApp.Menu
             }
             AnsiConsole.Write(table);
         }
-
 
         private static async Task EditarMarcas(IMediator mediator, AppDbContext _context)
         {
@@ -161,6 +160,47 @@ namespace Part1.ConsoleApp.Menu
                 AnsiConsole.MarkupLine("[red]Error al editar la marca.[/]");
             }
         }
+
+        private static async Task EliminarMarcas(IMediator mediator, AppDbContext _context)
+        {
+            var marcas = await mediator.Send(new Application.Queries.MarcaQueries.Get.GetAllMarcasQuery());
+            if (marcas == null || !marcas.Any())
+            {
+                AnsiConsole.MarkupLine("[red]No hay marcas para eliminar.[/]");
+                return;
+            }
+
+            var marca = AnsiConsole.Prompt(
+                new SelectionPrompt<Marca>()
+                    .Title("Seleccione la marca a eliminar:")
+                    .AddChoices(marcas)
+                    .UseConverter(m => $"{m.Id} - {m.Nombre}")
+            );
+
+            var marcaActual = await mediator.Send(new Application.Queries.MarcaQueries.Get.GetMarcaByIdQuery { Id = marca.Id });
+            if (marcaActual == null)
+            {
+                AnsiConsole.MarkupLine("[red]No se encontró la marca seleccionada.[/]");
+                return;
+            }
+
+            var command = new Application.Commands.MarcaCommands.Delete.DeleteMarcaCommand
+            {
+                Id = marcaActual.Id
+            };
+
+            var resultado = await mediator.Send(command);
+
+            if (resultado != null)
+            {
+                AnsiConsole.MarkupLine($"[green]Marca eliminada con éxito! ID: {resultado.Id}[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("[red]Error al eliminar la marca.[/]");
+            }
+        }
+
 
     }
 } 

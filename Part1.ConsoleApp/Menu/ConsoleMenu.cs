@@ -38,11 +38,8 @@ namespace Part1.ConsoleApp.Menu
                     case MenuOpciones.Estados:
                         await EstadoMenu.MostrarSubMenu(mediator, _context);
                         break;
-                    case MenuOpciones.OrdenesDeCompra:
-                        await OrdenDeCompraMenu.MostrarSubMenu(mediator, _context);
-                        break;
-                    case MenuOpciones.OrdenesDeCompraDetalle:
-                        await OrdenDeCompraDetalleMenu.MostrarSubMenu(mediator, _context);
+                    case MenuOpciones.RealizarOrden:
+                        await RealizarOrdenMenu.MostrarSubMenu(mediator, _context);
                         break;
                     case MenuOpciones.Cobranzas:
                         await CobranzaMenu.MostrarSubMenu(mediator, _context);
@@ -62,8 +59,7 @@ namespace Part1.ConsoleApp.Menu
             Distribuidores,
             TipoMateriales,
             Estados,
-            OrdenesDeCompra,
-            OrdenesDeCompraDetalle,
+            RealizarOrden,
             Cobranzas,
             Salir
         }

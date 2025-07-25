@@ -47,7 +47,7 @@ namespace Part1.ConsoleApp.Menu
                 new SelectionPrompt<OrdenDeCompra>()
                     .Title("Seleccione la orden de compra:")
                     .AddChoices(ordenes)
-                    .UseConverter(o => $"{o.Id} - {o.Fecha.ToShortDateString()}")
+                    .UseConverter(o => $"{o.Id} - {o.Fecha.ToString("dd-MM-yyyy")}")
             );
             var productos = _context.Filamentos.Cast<Producto>().Concat(_context.Insumos).ToList();
             var producto = AnsiConsole.Prompt(

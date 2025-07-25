@@ -29,6 +29,9 @@ namespace Part1.ConsoleApp.Menu
                     case DistribuidorOpciones.Listar:
                         await ListarDistribuidores(mediator);
                         break;
+                    case DistribuidorOpciones.Editar:
+                        await EditarDistribuidor(mediator);
+                        break;
                     case DistribuidorOpciones.Volver:
                         return;
                 }
@@ -39,6 +42,7 @@ namespace Part1.ConsoleApp.Menu
         {
             Agregar,
             Listar,
+            Editar,
             Volver
         }
 
@@ -71,6 +75,37 @@ namespace Part1.ConsoleApp.Menu
                 table.AddRow(distribuidor.Id.ToString(), distribuidor.Nombre);
             }
             AnsiConsole.Write(table);
+        }
+
+        private static async Task EditarDistribuidor(IMediator mediator)
+        {
+            var distribuidores = await mediator.Send(new Application.Queries.DistribuidorQueries.Get.GetAllDistribuidoresQuery());
+            if (distribuidores == null || !distribuidores.Any())
+            {
+                AnsiConsole.MarkupLine("[red]No hay distribuidores para editar.[/]");
+                return;
+            }
+            var distribuidor = AnsiConsole.Prompt(
+                new SelectionPrompt<Distribuidor>()
+                    .Title("Seleccione el distribuidor a editar:")
+                    .AddChoices(distribuidores)
+                    .UseConverter(d => $"{d.Id} - {d.Nombre}")
+            );
+            var nuevoNombre = AnsiConsole.Ask<string>("Nuevo nombre del distribuidor:", distribuidor.Nombre);
+            var nuevaDireccion = AnsiConsole.Ask<string>("Nueva dirección del distribuidor:", distribuidor.Direccion);
+            var nuevoTelefono = AnsiConsole.Ask<long>("Nuevo teléfono del distribuidor:", distribuidor.Telefono);
+            var command = new Application.Commands.DistribuidorCommands.Update.UpdateDistribuidorCommand
+            {
+                Id = distribuidor.Id,
+                Nombre = nuevoNombre,
+                Direccion = nuevaDireccion,
+                Telefono = nuevoTelefono
+            };
+            var resultado = await mediator.Send(command);
+            if (resultado != null)
+                AnsiConsole.MarkupLine($"[green]Distribuidor actualizado con éxito! ID: {resultado.Id}[/]");
+            else
+                AnsiConsole.MarkupLine("[red]Error al actualizar el distribuidor.[/]");
         }
     }
 } 

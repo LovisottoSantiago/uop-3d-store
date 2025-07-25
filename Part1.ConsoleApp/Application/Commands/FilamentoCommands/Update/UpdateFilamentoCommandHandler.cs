@@ -33,7 +33,7 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update
             filamento.Nombre = request.Nombre;
             filamento.Precio = (decimal)request.Precio;
             filamento.Stock = (int)request.Stock;
-            filamento.Estado = request.Estado;
+            filamento.Estado = (bool)request.Estado;
             filamento.Color = request.Color;
             filamento.MarcaId = request.MarcaId;
             filamento.TipoMaterialId = request.TipoMaterialId;

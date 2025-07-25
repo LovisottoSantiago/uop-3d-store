@@ -95,7 +95,7 @@ namespace Part1.ConsoleApp.Menu
             var table = new Table().AddColumn("ID").AddColumn("Fecha").AddColumn("Estado");
             foreach (var orden in ordenes)
             {
-                table.AddRow(orden.Id.ToString(), orden.Fecha.ToShortDateString(), orden.Estado?.NombreEstado ?? "");
+                table.AddRow(orden.Id.ToString(), orden.Fecha.ToString("dd-MM-yyyy"), orden.Estado?.NombreEstado ?? "");
             }
             AnsiConsole.Write(table);
         }
