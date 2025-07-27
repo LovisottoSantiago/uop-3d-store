@@ -22,14 +22,11 @@ namespace Part1.ConsoleApp.Menu
 
                 switch (opcion)
                 {
-                    case CobranzaOpciones.Agregar:
-                        await AgregarCobranza(mediator, _context);
-                        break;
-                    case CobranzaOpciones.Listar:
+                    case CobranzaOpciones.ListarTodas:
                         await ListarCobranzas(mediator);
                         break;
-                    case CobranzaOpciones.Editar:
-                        await EditarEstadoCobranza(mediator, _context);
+                    case CobranzaOpciones.Cobrar:
+                        await Cobrar(mediator, _context);
                         break;
                     case CobranzaOpciones.Volver:
                         return;
@@ -39,9 +36,8 @@ namespace Part1.ConsoleApp.Menu
 
         enum CobranzaOpciones
         {
-            Agregar,
-            Listar,
-            Editar,
+            ListarTodas,
+            Cobrar,
             Volver
         }
 
@@ -87,11 +83,12 @@ namespace Part1.ConsoleApp.Menu
         private static async Task ListarCobranzas(IMediator mediator)
         {
             var cobranzas = await mediator.Send(new Application.Queries.CobranzaQueries.Get.GetAllCobranzasQuery());
-            var table = new Table().AddColumn("ID").AddColumn("Orden").AddColumn("Fecha Pago").AddColumn("Monto").AddColumn("Estado");
+            var table = new Table().AddColumn("ID").AddColumn("Fecha Pago").AddColumn("Monto").AddColumn("Estado");
             
             foreach (var cobranza in cobranzas)
             {
-                table.AddRow(cobranza.Id.ToString(), cobranza.OrdenDeCompraId.ToString(), cobranza.FechaPago.ToString("dd-MM-yyyy"), cobranza.MontoPagado.ToString(), cobranza.Estado?.NombreEstado ?? "");
+                var estadoNombre = cobranza.Estado?.NombreEstado ?? "Sin Estado";
+                table.AddRow(cobranza.Id.ToString(), cobranza.FechaPago.ToString("dd-MM-yyyy"), cobranza.MontoPagado.ToString(), estadoNombre);
             }
 
             AnsiConsole.Write(table);
@@ -145,6 +142,51 @@ namespace Part1.ConsoleApp.Menu
             }
         }
 
+        private static async Task Cobrar(IMediator mediator, AppDbContext _context)
+        {
+            var cobranzas = await mediator.Send(new Application.Queries.CobranzaQueries.Get.GetAllCobranzasQuery());
+            var cobranzasFiltradas = cobranzas.Where(c => c.Estado?.NombreEstado?.ToLower() != "pagado").ToList();
+
+            if (!cobranzasFiltradas.Any())
+            {
+                AnsiConsole.MarkupLine("[red]No hay cobranzas pendientes.[/]");
+                return;
+            }
+
+            var cobranza = AnsiConsole.Prompt(
+                new SelectionPrompt<Cobranza>()
+                    .Title("Seleccione la cobranza:")
+                    .AddChoices(cobranzasFiltradas)
+                    .UseConverter(c => $"{c.Id} - {c.MontoPagado}")
+            );
+
+            var estados = _context.Estados.ToList();
+            var estado = AnsiConsole.Prompt(
+                new SelectionPrompt<Estado>()
+                    .Title("Seleccione el nuevo estado:")
+                    .AddChoices(estados)
+                    .UseConverter(e => $"{e.Id} - {e.NombreEstado}")
+            );
+
+            var command = new Application.Commands.CobranzaCommands.Cobrar.CobrarCommand
+            {
+                CobranzaId = cobranza.Id,
+                OrdenDeCompraId = cobranza.OrdenDeCompraId,
+                FechaPago = cobranza.FechaPago,
+                EstadoId = estado.Id
+            };
+
+            var resultado = await mediator.Send(command);
+
+            if (resultado != null)
+            {
+                AnsiConsole.MarkupLine($"[green]Estado de la cobranza actualizado con éxito! ID: {resultado.Id}[/]");
+            }
+            else
+            {
+                AnsiConsole.MarkupLine("[red]Error al actualizar el estado de la cobranza.[/]");
+            }
+        }
 
     }
 } 

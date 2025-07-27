@@ -18,7 +18,10 @@ namespace Part1.ConsoleApp.Application.Queries.CobranzaQueries.Get
         }
         public async Task<List<Cobranza>> Handle(GetAllCobranzasQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Cobranzas.ToListAsync(cancellationToken);
+            return await _context.Cobranzas
+                .Include(c => c.Estado)
+                .Include(c => c.OrdenDeCompra)
+                .ToListAsync(cancellationToken);
         }
     }
 } 
