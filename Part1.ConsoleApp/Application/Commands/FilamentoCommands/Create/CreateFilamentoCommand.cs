@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
 {
-    internal class CreateFilamentoCommand : IRequest<Filamento>
+    public class CreateFilamentoCommand : IRequest<Filamento>
     {
         public string? Nombre { get; set; }
         public decimal? Precio { get; set; }

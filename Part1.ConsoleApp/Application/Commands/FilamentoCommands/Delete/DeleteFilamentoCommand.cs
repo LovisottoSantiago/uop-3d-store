@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete
 {
-    internal class DeleteFilamentoCommand : IRequest<Filamento>
+    public class DeleteFilamentoCommand : IRequest<Filamento>
     {
         public int Id { get; set; }
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete
 {
-    internal class DeleteFilamentoCommandHandler : IRequestHandler<DeleteFilamentoCommand, Filamento>
+    public class DeleteFilamentoCommandHandler : IRequestHandler<DeleteFilamentoCommand, Filamento>
     {
         private readonly AppDbContext _context;
 
@@ -18,7 +18,7 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete
             _context = context;
         }
 
-        public async Task<Filamento> Handle(DeleteFilamentoCommand request, CancellationToken cancellationToken)
+        public async Task<Filamento?> Handle(DeleteFilamentoCommand request, CancellationToken cancellationToken)
         {
             var filamento = _context.Filamentos.FirstOrDefault(f => f.Id == request.Id);
 
@@ -27,7 +27,7 @@ namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete
                 return default;
             }
 
-            _context.Remove(filamento);
+            _context.Filamentos.Remove(filamento);
             await _context.SaveChangesAsync();
             return filamento;
         }

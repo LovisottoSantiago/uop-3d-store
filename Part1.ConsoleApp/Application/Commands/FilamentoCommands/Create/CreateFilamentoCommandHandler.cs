@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create
 {
-    internal class CreateFilamentoCommandHandler : IRequestHandler<CreateFilamentoCommand, Filamento>
+    public class CreateFilamentoCommandHandler : IRequestHandler<CreateFilamentoCommand, Filamento>
     {
         private readonly AppDbContext _context;
 
