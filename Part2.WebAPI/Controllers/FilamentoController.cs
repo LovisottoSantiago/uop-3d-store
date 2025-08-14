@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create;
 using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete;
@@ -34,12 +33,12 @@ namespace Part2.WebAPI.Controllers
         public async Task<IActionResult> GetByIdAsync(int id)
         {
             var query = new GetFilamentoByIdQuery { Id = id };
-            var filamento = await _mediator.Send(query);
+            var result = await _mediator.Send(query);
 
-            if (filamento == null)
+            if (result == null)
                 return NotFound();
 
-            return Ok(filamento);
+            return Ok(result);
         }
 
         // POST api/filamento
@@ -66,7 +65,7 @@ namespace Part2.WebAPI.Controllers
             if (result == null)
                 return NotFound();
 
-            return Ok(result);
+            return Ok(result); 
         }
 
         // DELETE api/filamento/{id}
