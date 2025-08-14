@@ -11,9 +11,9 @@ export const ui = {
 		contactus: "Contáctanos",
 		homepage: "Inicio",
 		tagline:
-			"WOP 3D Store es tu tienda argentina de impresión 3D: impresoras FDM, filamentos y servicios de reparación. Todo lo que necesitás para tus proyectos en un solo lugar.",
+			"UOP 3D Store es tu tienda argentina de impresión 3D: impresoras FDM, filamentos y servicios de reparación. Todo lo que necesitás para tus proyectos en un solo lugar.",
 		"hero.title.main": "Bienvenido a",
-		"hero.title.1": "WOP 3D",
+		"hero.title.1": "UOP 3D",
 		"hero.title.2": "Filamentos",
 		"hero.title.3": "Insumos",
 		"hero.title.4": "Impresoras",
