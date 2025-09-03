@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Part1.ConsoleApp.Domain.Entities
@@ -8,9 +6,15 @@ namespace Part1.ConsoleApp.Domain.Entities
     {
         [Key]
         public int Id { get; set; }
+
         public DateTime Fecha { get; set; }
-        public int EstadoId { get; set; } 
+
+        public int EstadoId { get; set; }
         public Estado Estado { get; set; }
+
         public List<OrdenDeCompraDetalle> Detalles { get; set; } = new();
+
+        public string NombreCliente { get; set; } = string.Empty;
+        public int NumeroCliente { get; set; }
     }
-} 
+}

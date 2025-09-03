@@ -1,14 +1,9 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Part1.ConsoleApp.Application.Commands.DistribuidorCommands.Create;
 using Part1.ConsoleApp.Application.Commands.DistribuidorCommands.Delete;
 using Part1.ConsoleApp.Application.Commands.DistribuidorCommands.Update;
-using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Create;
-using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete;
-using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Update;
 using Part1.ConsoleApp.Application.Queries.DistribuidorQueries.Get;
-using Part1.ConsoleApp.Application.Queries.FilamentoQueries.Get;
 
 namespace Part2.WebAPI.Controllers
 {
@@ -37,26 +32,28 @@ namespace Part2.WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var query = new GetDistribuidorByIdQuery { Id = id };
-            var result = await _mediator.Send(query);
+            var query = new GetDistribuidorByIdQuery() { Id = id };
+            var distribuidor = await _mediator.Send(query);
 
-            if (result == null)
+            if (distribuidor == null)
                 return NotFound();
 
-            return Ok(result);
+            return Ok(distribuidor);
         }
 
         // POST api/distribuidor
         [HttpPost]
-        public async Task<IActionResult> CreateAsync([FromBody] CreateDistribuidorCommand command)
+        public async Task<IActionResult> CreateAsync([FromBody] CreateDistribuidorCommand createDistribuidorCommand)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _mediator.Send(command);
+            var result = await _mediator.Send(createDistribuidorCommand);
 
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = result.Id }, result);
+            return CreatedAtAction(nameof(GetByIdAsync),
+                new { id = result.Id }, result);
         }
+
+
 
         // PUT api/distribuidor/{id}
         [HttpPut("{id}")]

@@ -21,6 +21,7 @@ namespace Part1.ConsoleApp.Application.Commands.DistribuidorCommands.Create
                 Direccion = request.Direccion,
                 Telefono = request.Telefono
             };
+
             _context.Distribuidores.Add(distribuidor);
             await _context.SaveChangesAsync();
             return distribuidor;

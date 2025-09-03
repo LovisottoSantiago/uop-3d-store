@@ -6,6 +6,7 @@ import BackgroundTexture from "@components/global/BackgroundTexture.astro";
 import Footer from "@components/global/Footer.astro";
 import Navigation from "@components/global/Navigation.astro";
 import { getLangFromUrl } from "../i18n/utils";
+import CardButton from "@components/CardButton.astro";
 
 const { pathname } = Astro.url;
 
@@ -81,5 +82,6 @@ function cursorFollowerActive() {
 		<Navigation />
 		{cursorFollowerActive() && <BlobCursorFollower />}
 		<slot />
+		<CardButton />
 	</body>
 </html>

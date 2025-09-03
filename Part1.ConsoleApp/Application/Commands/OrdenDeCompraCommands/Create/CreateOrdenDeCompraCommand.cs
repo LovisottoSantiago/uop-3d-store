@@ -8,5 +8,7 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Create
         public DateTime Fecha {  get; set; }
         public int EstadoId { get; set; }
         public List<OrdenDeCompraDetalle> Detalles { get; set; }
+        public string NombreCliente { get; set; } = string.Empty;
+        public int NumeroCliente { get; set; }
     }
 } 

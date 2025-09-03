@@ -11,19 +11,12 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
 let pages = [
-	{
-		title: "Inicio",
-		url: "/",
-	},
-	// {
-	// 	title: "Services",
-	// 	url: "/services",
-	// },
-	{
-		title: t("contact"),
-		url: "/contact/",
-	},
+  { title: "Inicio", url: "/" },
+  { title: "Filamentos", url: "/filamentos/" },
+  { title: "Insumos", url: "/insumos/" },
+  { title: t("contact"), url: "/contact/" },
 ];
+
 
 // if (isDev) {
 // 	pages.push({
@@ -45,7 +38,7 @@ const { pathname } = Astro.url;
       fill: #000000;
     }
   </style>
-  <text x="0" y="50" class="texto">UOP.3D</text>
+  <text x="0" y="50" class="texto" style="color: #4b4d4f !important;">UOP 3D</text>
 </svg>
 
 	</a>
@@ -281,4 +274,6 @@ const { pathname } = Astro.url;
 
 	document.removeEventListener("DOMContentLoaded", init); // astro:page-load
 	document.addEventListener("DOMContentLoaded", init); // astro:page-load
+
+	
 </script>

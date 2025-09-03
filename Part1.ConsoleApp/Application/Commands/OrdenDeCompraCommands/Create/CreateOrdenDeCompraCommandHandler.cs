@@ -19,6 +19,8 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Create
             {
                 Fecha = request.Fecha,
                 EstadoId = request.EstadoId,
+                NombreCliente = request.NombreCliente,
+                NumeroCliente = request.NumeroCliente,
                 Detalles = request.Detalles.Select(d => new OrdenDeCompraDetalle
                 {
                     ProductoId = d.ProductoId,

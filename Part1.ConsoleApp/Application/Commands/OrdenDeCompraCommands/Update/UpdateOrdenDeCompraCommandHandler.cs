@@ -25,6 +25,8 @@ namespace Part1.ConsoleApp.Application.Commands.OrdenDeCompraCommands.Update
             ordenDeCompra.Fecha = request.Fecha;
             ordenDeCompra.EstadoId = request.EstadoId;
             ordenDeCompra.Detalles = request.Detalles;
+            ordenDeCompra.NombreCliente = request.NombreCliente;
+            ordenDeCompra.NumeroCliente = request.NumeroCliente;
 
             await _context.SaveChangesAsync();
             return ordenDeCompra;

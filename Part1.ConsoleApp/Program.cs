@@ -34,7 +34,10 @@ namespace Part1.ConsoleApp
             });
 
             // Registrar MediatR 
-            services.AddMediatR(typeof(CreateFilamentoCommandHandler).Assembly);
+            services.AddMediatR(cfg =>
+            {
+                cfg.RegisterServicesFromAssembly(typeof(CreateFilamentoCommandHandler).Assembly);
+            });
 
             var provider = services.BuildServiceProvider();
             var dbContext = provider.GetRequiredService<AppDbContext>();

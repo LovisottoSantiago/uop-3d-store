@@ -1,0 +1,45 @@
+---
+import axios from 'axios';
+
+interface Marca {
+  id: number;
+  nombre: string;
+}
+
+interface Filamento {
+  id: number;
+  nombre: string;
+  precio: number;
+  stock: number;
+  estado: boolean;
+  color: string;
+  imagenUrl: string;
+  marcaId: number;
+  tipoMaterialId?: number | null;
+  peso?: number | null;
+}
+
+const API_URL = 'https://uop3d-api.runasp.net/api/Filamento';
+const API_KEY = 'apikey';
+
+let filamentos: Filamento[] = [];
+
+try {
+  const res = await axios.get<Filamento[]>(API_URL, {
+    headers: { 'x-api-key': API_KEY }
+  });
+  filamentos = res.data;
+} catch (err) {
+  console.error(err);
+}
+---
+
+<ul>
+  {filamentos.map((f: Filamento) => (
+    <li>
+      {f.nombre} 
+      <img src={f.imagenUrl} alt={f.nombre} width={50} />
+      <strong>{f.nombre}</strong> - ${f.precio} - Stock: {f.stock}
+    </li>
+  ))}
+</ul>

@@ -1,11 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Part1.ConsoleApp.Application.Commands.FilamentoCommands.Delete;
 using Part1.ConsoleApp.Application.Commands.InsumoCommands.Create;
 using Part1.ConsoleApp.Application.Commands.InsumoCommands.Delete;
 using Part1.ConsoleApp.Application.Commands.InsumoCommands.Update;
 using Part1.ConsoleApp.Application.Queries.InsumoQueries.Get;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Part2.WebAPI.Controllers
 {
@@ -22,7 +20,7 @@ namespace Part2.WebAPI.Controllers
         }
         
         
-        // GET: api/<InsumoController>
+        // GET: api/InsumoController
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -31,7 +29,7 @@ namespace Part2.WebAPI.Controllers
             return Ok(result);
         }
 
-        // GET api/<InsumoController>/5
+        // GET api/InsumoController/{id}
         [HttpGet("{id}")]
         public async Task<IActionResult> GetByIdAsync(int id)
         {
@@ -44,7 +42,7 @@ namespace Part2.WebAPI.Controllers
             return Ok(insumo);
         }
 
-        // POST api/<InsumoController>
+        // POST api/InsumoController
         [HttpPost]
         public async Task<IActionResult> CreateAsync([FromBody] CreateInsumoCommand createInsumoCommand)
         {
@@ -53,10 +51,10 @@ namespace Part2.WebAPI.Controllers
             var result = await _mediator.Send(createInsumoCommand);
 
             return CreatedAtAction(nameof(GetByIdAsync),
-                new { Id = result.Id }, result);
+                new { id = result.Id }, result);
         }
 
-        // PUT api/<InsumoController>/5
+        // PUT api/InsumoController/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAsync(int id, [FromBody]UpdateInsumoCommand updateInsumoCommand)
         {
@@ -71,7 +69,7 @@ namespace Part2.WebAPI.Controllers
             return Ok(result);
         }
 
-        // DELETE api/<InsumoController>/5
+        // DELETE api/InsumoController/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
@@ -83,5 +81,7 @@ namespace Part2.WebAPI.Controllers
 
             return NoContent();
         }
+
+
     }
 }

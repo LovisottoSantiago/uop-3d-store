@@ -1,0 +1,62 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import axios from "axios";
+
+const API_KEY = import.meta.env.API_KEY;
+const API_URL = "https://uop3d-api.runasp.net/api/OrdenDeCompra";
+---
+
+<BaseLayout>
+  <section class="px-6 py-12 max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold mb-6">Finalizar compra</h2>
+    <form id="checkoutForm" class="space-y-4">
+      <input type="text" name="nombreCliente" placeholder="Tu nombre" class="w-full border p-2 rounded" required />
+      <input type="number" name="numeroCliente" placeholder="Número de cliente / Teléfono" class="w-full border p-2 rounded" required />
+      <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded">Confirmar compra</button>
+    </form>
+  </section>
+
+<script type="module">
+  import axios from "axios";
+
+  const API_URL = "https://uop3d-api.runasp.net/api/OrdenDeCompra";
+  const API_KEY = import.meta.env.API_KEY;
+
+  document.getElementById("checkoutForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const nombreCliente = formData.get("nombreCliente");
+    const numeroCliente = parseInt(formData.get("numeroCliente"));
+
+    let carrito = JSON.parse(localStorage.getItem("carrito") || "[]");
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío");
+      return;
+    }
+
+    const orden = {
+      fecha: new Date().toISOString(),
+      estadoId: 1, // ejemplo: Pendiente
+      nombreCliente,
+      numeroCliente,
+      detalles: carrito.map(item => ({
+        productoId: item.productoId,
+        cantidad: item.cantidad,
+        precioUnitario: item.precio
+      }))
+    };
+
+    try {
+      await axios.post(API_URL, orden, {
+        headers: { "x-api-key": API_KEY }
+      });
+      alert("Compra realizada con éxito 🎉");
+      localStorage.removeItem("carrito");
+      window.location.href = "/";
+    } catch (err) {
+      console.error(err);
+      alert("Error al procesar la compra ❌");
+    }
+  });
+</script>
+</BaseLayout>
